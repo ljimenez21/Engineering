@@ -1,28 +1,16 @@
 #function that finds the exponentiation using user's input
 def powerDigit(base,exponent):
-    	if exponent == 0:
-        	powerDigit = 1
-    	elif exponent == 1:
-		powerDigit = base
-    	else:
-		iteration = 2
-		powerDigit = base
-#While loop that multiples the base 'x' amount of times based on the exponent value given
-		while iteration <= exponent:
-			powerDigit *= base
-			iteration += 1
-#Inserts exponentiation into the powerDigitSum function
-    	powerDigitSum(powerDigit)
+	powerDigit = base ** exponent
+	powerDigitSum(powerDigit)
 
 #function that adds the digits of the exponentiation
 def powerDigitSum(digit):
 	list = []
 #Converts the exponentation into a string and then places each digit into a list
 	list[:0] = str(digit)
-	powerDigitSum = 0
-#Loop that adds the digits of the exponentiation together
-	for digits in list:
-		powerDigitSum += int(digits)
+#Converts each string in the list into an integer
+	list = [int(i) for i in list]
+	powerDigitSum = sum(list)
 	print(powerDigitSum)
 
 #Asks for input from the user
